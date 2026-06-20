@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VN Flight Radar — Web Flasher</title>
+<script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+<style>
+  :root {
+    --blue:#0078ff;
+    --blue-dark:#005fcc;
+    --sky:#38bdf8;
+    --soft:#64748b;
+    --ink:#0f172a;
+    --card:#ffffff;
+    --bg:#f8fbff;
+    --line:#dbeafe;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 32px 18px;
+    background: linear-gradient(135deg,#f8fbff,#e6f2ff);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  h1 {
+    color: var(--blue);
+    font-size: 28px;
+    margin: 8px 0 2px;
+    letter-spacing: .5px;
+  }
+
+  .sub {
+    color: var(--soft);
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 26px 22px;
+    max-width: 460px;
+    width: 100%;
+    margin-bottom: 18px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+
+  esp-web-install-button {
+    --esp-tools-button-color: #ffffff;
+    --esp-tools-button-background-color: var(--blue);
+  }
+
+  ol {
+    text-align: left;
+    color: var(--soft);
+    font-size: 14px;
+    line-height: 1.6;
+    padding-left: 20px;
+  }
+
+  code {
+    background:#e0f2fe;
+    padding:2px 6px;
+    border-radius:6px;
+    color:var(--ink);
+  }
+
+  .note {
+    color:#64748b;
+    font-size:12px;
+    margin-top:18px;
+  }
+
+  a {
+    color: var(--blue);
+    font-weight: 600;
+  }
+
+  .radar {
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    border: 2px solid var(--blue);
+    position: relative;
+    margin: 0 auto 14px;
+    box-shadow: 0 0 22px rgba(0,120,255,.25);
+    background:#ffffff;
+  }
+
+  .radar::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    background: conic-gradient(from 0deg, rgba(0,120,255,.45), transparent 60%);
+    animation: spin 3.2s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .ver {
+    color:var(--soft);
+    font-size:13px;
+    margin-top:14px;
+  }
+
+  .ver b {
+    color: var(--blue);
+  }
+</style>
+</head>
+<body>
+  <div class="radar"></div>
+  <h1>VN Flight Radar</h1>
+  <div class="sub">Live ADS-B aircraft radar · Waveshare ESP32-S3-Touch-AMOLED-1.75</div>
+
+  <div class="card">
+    <p style="margin-top:0">Flash the firmware straight from your browser — no toolchain, no PlatformIO.</p>
+    <esp-web-install-button manifest="manifest.json">
+      <button slot="activate">⚡ Install VN Flight Radar</button>
+      <span slot="unsupported">Use Chrome or Edge on desktop (Web Serial required).</span>
+      <span slot="not-allowed">Serve this page over HTTPS to flash.</span>
+    </esp-web-install-button>
+    <div class="ver">Installs firmware <b>v__FWVER__</b></div>
+  </div>
+
+  <div class="card">
+    <ol>
+      <li>Plug the board into your computer with a <b>USB-C data cable</b>.</li>
+      <li>Click <b>Install</b> and pick the <code>USB JTAG/serial</code> or <code>USB Serial</code> port.</li>
+      <li>Choose <b>Erase device + Install</b> on first flash.</li>
+      <li>When it reboots, join the <b>VNFlightRadar-Setup</b> WiFi from your phone.</li>
+      <li>Fine-tune anything later at <code>http://vnflightradar.local/</code>.</li>
+    </ol>
+  </div>
+
+  <div class="note">
+    Educational / non-commercial project · data from airplanes.live &amp; adsbdb.com<br>
+    Source &amp; build instructions:
+    <a href="https://github.com/vineelsai313/vn-flight-radar">GitHub repository</a>
+  </div>
+</body>
+</html>
