@@ -1,13 +1,12 @@
-# Capsule Radar 🛩️
+# VN Flight Radar 🛩️
 
 <p align="center">
-  <a href="https://socquique.github.io/capsule-radar/"><img src="https://img.shields.io/badge/Flash%20in%20browser-FF6D00?logo=googlechrome&logoColor=white" alt="Flash in browser"></a>
-  <a href="https://makerworld.com/en/models/2907695-capsule-radar-live-flight-radar-desk-gadget"><img src="https://img.shields.io/badge/MakerWorld-3D%20case-1A8917?logo=bambulab&logoColor=white" alt="MakerWorld – 3D case"></a>
+  <a href="https://vineelsai313.github.io/vn-flight-radar/"><img src="https://img.shields.io/badge/Flash%20in%20browser-FF6D00?logo=googlechrome&logoColor=white" alt="Flash in browser"></a>
   <img src="https://img.shields.io/badge/board-ESP32--S3%20round%20AMOLED-E7352C?logo=espressif&logoColor=white" alt="Board: ESP32-S3 round AMOLED">
-  <a href="https://github.com/socquique/capsule-radar/releases"><img src="https://img.shields.io/github/v/tag/socquique/capsule-radar?label=firmware&color=7B42BC" alt="Firmware version"></a>
+  <a href="https://github.com/vineelsai313/vn-flight-radar/releases"><img src="https://img.shields.io/github/v/tag/socquique/capsule-radar?label=firmware&color=7B42BC" alt="Firmware version"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/code-MIT-2088FF" alt="License: MIT"></a>
-  <img src="https://img.shields.io/github/languages/count/socquique/capsule-radar?label=languages&color=FFC107" alt="Languages">
-  <a href="https://github.com/socquique/capsule-radar/stargazers"><img src="https://img.shields.io/github/stars/socquique/capsule-radar?style=social" alt="GitHub stars"></a>
+  <img src="https://img.shields.io/github/languages/count/vineelsai313/vn-flight-radar?label=languages&color=FFC107" alt="Languages">
+  <a href="https://github.com/vineelsai313/vn-flight-radar/stargazers"><img src="https://img.shields.io/github/stars/vineelsai313/vn-flight-radar?style=social" alt="GitHub stars"></a>
 </p>
 
 A live **ADS-B aircraft radar** for the **Waveshare ESP32-S3-Touch-AMOLED-1.75** — a round 466×466 AMOLED with capacitive touch. It pulls nearby aircraft from a free online feed over WiFi and plots them on a touch radar scope centered on your location, with live flight details and selectable visual skins.
@@ -55,10 +54,10 @@ On first flash you may need to hold **BOOT** then tap **RESET**. After flashing,
 
 Makers can flash without installing anything using **ESP Web Tools** (Chrome or Edge on desktop):
 
-1. Open the **[web flasher](https://socquique.github.io/capsule-radar/)** (the project's GitHub Pages site).
+1. Open the **[web flasher](https://vineelsai313.github.io/vn-flight-radar/)** (the project's GitHub Pages site).
 2. Plug the board in with a USB-C **data** cable and click **Install**.
 
-The flasher is built and published automatically by GitHub Actions ([`.github/workflows/webflasher.yml`](.github/workflows/webflasher.yml)) on every push to `main` — enable it once in **Settings → Pages → Source = GitHub Actions**. Tagged releases (`git tag v1.0.0 && git push origin v1.0.0`) also attach a ready-to-flash `CapsuleRadar-esp32s3.bin` to a **GitHub Release** via [`release.yml`](.github/workflows/release.yml). To preview the flasher locally:
+The flasher is built and published automatically by GitHub Actions ([`.github/workflows/webflasher.yml`](.github/workflows/webflasher.yml)) on every push to `main` — enable it once in **Settings → Pages → Source = GitHub Actions**. Tagged releases (`git tag v1.0.0 && git push origin v1.0.0`) also attach a ready-to-flash `VNFlightRadar-esp32s3.bin` to a **GitHub Release** via [`release.yml`](.github/workflows/release.yml). To preview the flasher locally:
 
 ```bash
 ./scripts/build_webflasher.sh                      # build + merge into web/flash/
@@ -99,6 +98,16 @@ web/flash/           browser web-flasher (ESP Web Tools) for makers
 scripts/             build_webflasher.sh (merge firmware -> single .bin)
 docs/                hardware / data-source / architecture notes
 ```
+
+## Maintainer
+
+**Vineel Sai**
+
+GitHub: [vineelsai313](https://github.com/vineelsai313)
+
+## Acknowledgements
+
+VN Flight Radar is a modified version of the open-source Capsule Radar project, adapted for the Waveshare ESP32-S3 Touch AMOLED 1.75 platform and maintained by Vineel Sai.
 
 ## Data & license
 
