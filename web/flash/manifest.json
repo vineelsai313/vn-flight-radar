@@ -6,7 +6,7 @@
     {
       "chipFamily": "ESP32-S3",
       "parts": [
-        { "path": "VN FlightRadar-esp32s3.bin", "offset": 0 }
+        { "path": "VNFlightRadar-esp32s3.bin", "offset": 0 }
       ]
     }
   ]
